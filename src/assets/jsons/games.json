@@ -1,0 +1,84 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "category": "agences",
+      "name": "CA HT GLOBAL AGENT ACTÉ",
+      "description": "Le chiffres d’affaires retenu est le CA hors taxes signé en acte authentique généré sur les unités de MANDAT et de VENTE de l’agent",
+      "image": "./assets/vignettes/agences/game-1.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 2,
+      "category": "agences",
+      "name": "CA HT GLOBAL AGENT SSP",
+      "description": "Le chiffre d’affaires retenu est le CA hors taxes signé en compromis/promesse généré sur les unités de MANDAT et de VENTE de l’agent.",
+      "image": "./assets/vignettes/agences/game-2.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 3,
+      "category": "agences",
+      "name": "AGENT VENTES SSP (unités)",
+      "description": "Le volume d’unités pris en compte concerne uniquement les dossiers de ventes de l’agent sous compromis/promesses de VENTE signées entre le 01/01/2024 et le 31/12/2024.",
+      "image": "./assets/vignettes/agences/game-3.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 4,
+      "category": "agences",
+      "name": "AGENT DEMARCHEUR (unités)",
+      "description": "Dans ce défi c’est le plus grand nombre de points générés tout au long du jeux concours qui compte. La comptabilisation des points est la suivante : 1 mandat exclusif signé : 7 points, 1 mandat simple signé : 2 points",
+      "image": "./assets/vignettes/agences/game-4.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 5,
+      "category": "agences",
+      "name": "CA HT GLOBAL D’AGENCE SSP",
+      "description": "Les CA HT GLOBAL AGENCE retenus sont ceux concernant les dossiers qui auront été signés en compromis/promesse uniquement entre le 01/01/2024 et le 31/12/2024, il est précisé que seuls les compromis/promesses signées à compter du 01/01/2024 seront pris en compte dans le challenge.",
+      "image": "./assets/vignettes/agences/game-5.png",
+      "userList": [21, 22, 23, 24, 25, 26, 27, 28] 
+    },
+    {
+      "id": 6,
+      "category": "mandataires",
+      "name": "CA HT GLOBAL AGENT ACTÉ",
+      "description": "Le chiffres d’affaires retenu est le CA hors taxes signé en acte authentique généré sur les unités de MANDAT et de VENTE de l’agent",
+      "image": "./assets/vignettes/mandataires/game-6.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 7,
+      "category": "mandataires",
+      "name": "CA HT GLOBAL AGENT SSP",
+      "description": "Le chiffre d’affaires retenu est le CA hors taxes signé en compromis/promesse généré sur les unités de MANDAT et de VENTE de l’agent.",
+      "image": "./assets/vignettes/mandataires/game-7.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 8,
+      "category": "mandataires",
+      "name": "AGENT DEMARCHEUR (unités)",
+      "description": "Dans ce défi c’est le plus grand nombre de points générés tout au long du jeux concours qui compte. La comptabilisation des points est la suivante : 1 mandat exclusif signé : 7 points, 1 mandat simple signé : 2 points",
+      "image": "./assets/vignettes/mandataires/game-8.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 9,
+      "category": "mandataires",
+      "name": "CA HT GLOBAL D’EQUIPE SSP",
+      "description": "Les CA GLOBAL D’EQUIPE retenus sont ceux concernant les dossiers qui auront été signés en compromis/promesse uniquement entre le 01/01/2024 et le 31/12/2024",
+      "image": "./assets/vignettes/mandataires/game-9.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    },
+    {
+      "id": 10,
+      "category": "mandataires",
+      "name": "MEILLEUR DEV (agents déclarés)",
+      "description": "Dans ce jeu concours sera comptabilisé chaque déclaration effectuée par un agent du réseau même si le parrain direct du futur agent se situe sur ses niveaux inférieurs.",
+      "image": "./assets/vignettes/mandataires/game-10.png",
+      "userList": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] 
+    }
+  ]
+}

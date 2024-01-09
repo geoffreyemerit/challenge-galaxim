@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="md:px-6 lg:px-8">
+    <div class="text-700 text-center px-2">
+        <div class="text-900 font-bold text-3xl mb-3 md:text-4xl lg:text-5xl">Vivez une expérience unique !</div>
+        <div class="text-400 text-lg md:text-2xl">Rejoignez l'élite à la soirée de gala et envolez-vous vers un séminaire ensoleillé d'excellence.</div>
+    </div>
+</div>
+  
+  <div class="p-4 w-full m-auto md:w-10 lg:w-6">
+    <form class="md:mx-4" #registerForm="ngForm" (ngSubmit)="onFormSubmit(registerForm)">
+        <div >
+            <label for="firstname" class="block text-900 font-medium mb-1">Prénom</label>
+            <input class="w-full mb-2" pInputText id="firstname" name="firstname" type="text" placeholder="Prénom" [(ngModel)]="firstname" required/>
+    
+            <label for="lastname" class="block text-900 font-medium mb-1">Nom</label>
+            <input class="w-full mb-2" pInputText id="lastname" name="lastname" type="text" placeholder="Nom" [(ngModel)]="lastname" required/>
+    
+            <label class="block text-900 font-medium mb-1" for="company" >Réseau</label>
+            <select class="w-full mb-2" pInputText id="company" name="company" [(ngModel)]="selectedCompany" required>
+                    <option disabled value="" selected>Galaxim</option>
+                    <option  *ngFor="let company of companyOptions" [value]="company">{{ company }}</option>
+            </select>
+    
+            <label class="block text-900 font-medium mb-1" for="salesteam" >Agence</label>
+            <select class="w-full mb-2" pInputText  id="salesteam" name="salesteam" [(ngModel)]="selectedSalesteam" required>
+                    <option disabled value="" selected>Bayonne</option>
+                    <option *ngFor="let salesteam of salesteamOptions" [value]="salesteam">{{ salesteam }}</option>
+            </select>
+    
+            <label class="select" for="pack" class="block text-900 font-medium mb-1">Pack premium</label>
+            <select class="w-full mb-2"  pInputText id="pack" name="pack" [(ngModel)]="selectedPack" required>
+                <option disabled value="" selected>Selectionner une option</option>
+                <option *ngFor="let pack of packOptions" [value]="pack">{{ pack }}</option>
+            </select>
+
+            <label for="integrationDate" class="block text-900 font-medium mb-1">Date intégration challenge</label>
+            <p-calendar class="calendar" placeholder="01/01/2024" id="integrationDate" name="integrationDate" type="date" [(ngModel)]="selectedIntegrationDate" ></p-calendar>
+
+            <p-toast></p-toast>
+            <p-button [disabled]="!isFormValid()" (click)="isFormValid()" type="submit" value="Send" icon="pi pi-check" label="Envoyer" class="form-submit-button w-full mt-4 p-button-success" [style]="{background: 'linear-gradient(90deg, rgba(226,0,126,1) 0%, rgba(107,35,131,1) 100%)'}"></p-button>
+
+        </div>
+    </form>
+</div>

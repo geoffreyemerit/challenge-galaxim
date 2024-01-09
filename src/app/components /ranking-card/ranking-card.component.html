@@ -1,0 +1,14 @@
+<div class="card" [ngStyle]="getCardColor()">
+
+    <div class="card-picture">
+        <img class="card-rank" [src]="getCardLogoRanking()" alt="">
+        <img class="card-img " [src]="userChild.photo" [alt]="userChild.name">
+    </div>
+
+    <div class="card-body">
+        <h3>{{userChild.name}}</h3>
+        <p><span>{{userChild.company}} </span> <span class="salesteam">{{userChild.salesteam}}</span></p>
+    </div>
+
+    <p class="perf" *ngIf="getItemsEurosOrPoints()">{{userChild.salesPerformance}} {{getItemsEurosOrPoints()}}</p>
+</div>

@@ -1,0 +1,30 @@
+.game {
+    min-height: calc(100vh - 10vh - 2rem);
+    height: 100%;
+}
+
+.previousPage-desktop{
+    display: flex;
+    justify-content: end;
+    margin-right: 1rem;
+}
+
+.previousPage-mobile{
+    display: flex;
+    justify-content: end;
+    margin-right: 1rem;
+}
+
+
+@media (max-width: 767px) {
+    .previousPage-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .previousPage-mobile {
+        display: none;
+    }
+   
+}

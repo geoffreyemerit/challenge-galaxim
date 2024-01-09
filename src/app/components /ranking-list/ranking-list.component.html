@@ -1,0 +1,10 @@
+<div class="cardContainer">
+    <app-ranking-card
+    *ngFor="let user of userList; let i = index"
+    [userChild]="user"
+    [position]="i + 1"
+    [idGame]="game.id"
+>  </app-ranking-card>
+<!-- <p-scrollTop target="parent" styleClass="custom-scrolltop" [threshold]="100" icon="pi pi-arrow-up"></p-scrollTop> -->
+
+</div>
