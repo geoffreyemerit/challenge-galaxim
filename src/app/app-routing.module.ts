@@ -6,6 +6,7 @@ import { ViewGameComponent } from './components /view-game/view-game.component';
 import { ViewTeamComponent } from './components /view-team/view-team.component';
 import { RegisterFormComponent } from './components /register-form/register-form.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { RulesChallengeComponent } from './components /rules-challenge/rules-challenge.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch:'full'},
@@ -13,8 +14,9 @@ const routes: Routes = [
 
   { path: 'game/:id', component: ViewGameComponent },
   { path: 'team/:category', component: ViewTeamComponent },
-
-  { path: 'register', component: RegisterFormComponent},
+  
+  { path: 'regles', component: RulesChallengeComponent},
+  { path: 'inscription', component: RegisterFormComponent},
 
   {path: '**', component: ErrorComponent}
 

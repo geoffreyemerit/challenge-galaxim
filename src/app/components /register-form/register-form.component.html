@@ -34,8 +34,8 @@
                 <option *ngFor="let pack of packOptions" [value]="pack">{{ pack }}</option>
             </select>
 
-            <label for="integrationDate" class="block text-900 font-medium mb-1">Date intégration challenge</label>
-            <p-calendar class="calendar" placeholder="01/01/2024" id="integrationDate" name="integrationDate" type="date" [(ngModel)]="selectedIntegrationDate" ></p-calendar>
+            <!-- <label for="integrationDate" class="block text-900 font-medium mb-1">Date intégration challenge</label>
+            <p-calendar class="calendar" placeholder="01/01/2024" id="integrationDate" name="integrationDate" type="date" [(ngModel)]="selectedIntegrationDate" ></p-calendar> -->
 
             <p-toast></p-toast>
             <p-button [disabled]="!isFormValid()" (click)="isFormValid()" type="submit" value="Send" icon="pi pi-check" label="Envoyer" class="form-submit-button w-full mt-4 p-button-success" [style]="{background: 'linear-gradient(90deg, rgba(226,0,126,1) 0%, rgba(107,35,131,1) 100%)'}"></p-button>

@@ -15,7 +15,7 @@ export class RegisterFormComponent implements OnInit{
 
   firstname: string = "";
   lastname: string = "";
-  selectedIntegrationDate!: Date;
+  //selectedIntegrationDate!: Date;
 
   companyOptions: string[] = ['Weelodge', 'Agentys'];
   selectedCompany: string = '';
@@ -40,7 +40,7 @@ export class RegisterFormComponent implements OnInit{
     // Retourne true si toutes les conditions sont remplies, sinon false
     return isFirstNameValid && 
            isLastNameValid && 
-           this.selectedIntegrationDate !== null && 
+           //this.selectedIntegrationDate !== null && 
            this.selectedCompany !== '' && 
            this.selectedSalesteam !== '' && 
            this.selectedPack !== '';
@@ -52,7 +52,7 @@ export class RegisterFormComponent implements OnInit{
   const emailParams = {
     firstname: this.firstname,
     lastname: this.lastname,
-    integrationDate: this.selectedIntegrationDate?.toLocaleDateString(), 
+    //integrationDate: this.selectedIntegrationDate?.toLocaleDateString(), 
     company : form.value.company,
     salesteam : form.value.salesteam,
     pack : form.value.pack,
@@ -64,7 +64,7 @@ export class RegisterFormComponent implements OnInit{
       // Réinitialisez les valeurs des champs à leurs valeurs par défaut
       this.firstname = '';
       this.lastname = '';
-      this.selectedIntegrationDate = new Date();
+      //this.selectedIntegrationDate = new Date();
       this.selectedCompany = '';
       this.selectedSalesteam = '';
       this.selectedPack = '';

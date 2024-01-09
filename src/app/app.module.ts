@@ -25,6 +25,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { ToastModule } from 'primeng/toast';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { RulesChallengeComponent } from './components /rules-challenge/rules-challenge.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     ViewTeamComponent,
     RegisterFormComponent,
     HomeDescriptionComponent,
+    RulesChallengeComponent,
     
   ],
   imports: [
@@ -47,13 +50,14 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxExtendedPdfViewerModule,
 
     SidebarModule,
     ButtonModule,
     InputTextModule,
     CalendarModule,
     ToastModule,
-    ScrollTopModule
+    ScrollTopModule,
   ],
   providers: [GameDataService],
   bootstrap: [AppComponent]
