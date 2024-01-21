@@ -1,21 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
+import { UserDataService } from 'src/app/shared/user-data.service';
 
 @Component({
   selector: 'app-ranking-card',
   templateUrl: './ranking-card.component.html',
   styleUrls: ['./ranking-card.component.scss']
 })
-export class RankingCardComponent {
+export class RankingCardComponent implements OnInit {
 
   @Input()
-  userChild!: User;
+ userChild!: User;
 
   @Input() 
   position!: number;
 
   @Input() 
   idGame!: number;
+
+  userList: User[] = [];
+
+
+  constructor(private userDataService: UserDataService) {}
+
+  ngOnInit(): void {
+    this.userDataService.getAllUsersByGame(this.idGame)
+      .subscribe(users => this.userList = users);
+  }
 
   getCardColor(): any {
     const borderColorMapping: any = {
@@ -55,10 +66,41 @@ export class RankingCardComponent {
 
       if (this.idGame === 4 || this.idGame === 8){
         items = `points`;
-      } else {
+      } else if (this.idGame === 10){
+       (this.userChild.best_dev === 1) ? items = `agent` : items = `agents`;
+      } else if (this.idGame === 3){
+        (this.userChild.sales_ssp === 1) ? items = `vente` : items = `ventes`;
+       }  else {
         items = `€`;
       }
 
       return items;
     }
+
+    getPerformance(): number {
+      switch (this.idGame) {
+          case 1:
+              return this.userChild.ca_ht_act;
+          case 6:
+              return this.userChild.ca_ht_act;
+          case 2:
+              return this.userChild.ca_ht_ssp;
+          case 7:
+              return this.userChild.ca_ht_ssp;
+          case 3:
+              return this.userChild.sales_ssp;
+          case 4:
+              return this.userChild.mandates; // Remplacer par le champ correct si nécessaire
+          case 8:
+              return this.userChild.mandates; // Remplacer par le champ correct si nécessaire
+          case 9:
+              return this.userChild.ca_ht_team_ssp;
+          case 10:
+              return this.userChild.best_dev; 
+          case 5:
+              return this.userChild.ca_company; 
+          default:
+              return 0;
+      }
+  }
 }

@@ -2,18 +2,20 @@ export class User {
 
     constructor (        
         public id: number,
-        public name: string,
+        public firstname: string,
+        public lastname: string,
         public photo: string,
 
         public company: string,
-        public salesteam: string,
-        
-        public sales: number,
-        public excluMandate: number,
-        public simpleMandate: number,
-        public outMandate: number,
+        public office: string,
 
-        public salesPerformance: string,
+        public ca_ht_act: number,
+        public ca_ht_ssp: number,
+        public sales_ssp: number,
+        public mandates: number,
+        public best_dev: number,
+        public ca_ht_team_ssp: number,
+        public ca_company: number,
         ) {}
 }
 
