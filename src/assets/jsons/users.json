@@ -43,7 +43,7 @@
       "sales_ssp": 0,
       "mandates": 0,
       "best_dev": 0,
-      "ca_ht_team_ssp": 15833.33
+      "ca_ht_team_ssp": 24166.66
     },   
     {
       "id": 4,
@@ -87,14 +87,14 @@
       "ca_ht_ssp": 0,
       "sales_ssp": 0,
       "mandates": 0,
-      "best_dev": 4,
+      "best_dev": 5,
       "ca_ht_team_ssp": 0
     },
     {
       "id": 7,
       "firstname": "Aurore",
       "lastname": "LECOMTE",
-      "photo": "/assets/photos/7_Aurore_Lecomte.jpeg",
+      "photo": "/assets/photos/7_Aurore_Lecomte-Bourdeyroux.jpeg",
       "job": "mandataire",
       "company": "Weelodge",
       "office": "Weelodge Center",
@@ -146,7 +146,7 @@
       "ca_ht_act": 0,
       "ca_ht_ssp": 0,
       "sales_ssp": 0,
-      "mandates": 28,
+      "mandates": 35,
       "best_dev": 0,
       "ca_ht_team_ssp": 0
     },
@@ -191,7 +191,7 @@
       "ca_ht_act": 0,
       "ca_ht_ssp": 0,
       "sales_ssp": 0,
-      "mandates": 7,
+      "mandates": 14,
       "best_dev": 0,
       "ca_ht_team_ssp": 0
     },
@@ -204,7 +204,7 @@
       "company": "Weelodge",
       "office": "Weelodge Center",
       "ca_ht_act": 0,
-      "ca_ht_ssp": 0,
+      "ca_ht_ssp": 8333.33,
       "sales_ssp": 0,
       "mandates": 7,
       "best_dev": 0,
@@ -416,7 +416,112 @@
       "company": "",
       "office": "Olivier MARTIN, Maxime DUMAS",
       "ca_company": 7500
-    }
+    },
+    {
+      "id": 31,
+      "firstname": "Céline",
+      "lastname": "BEN",
+      "photo": "/assets/photos/31_Celine_Ben.jpg",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 6666.67,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 0,
+      "best_dev": 0,
+      "ca_ht_team_ssp": 0
+    },
+    {
+      "id": 32,
+      "firstname": "Jeffrey",
+      "lastname": "GOSMAT",
+      "photo": "/assets/photos/32_Jeffrey_Gosmat.png",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 0,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 11,
+      "best_dev": 0,
+      "ca_ht_team_ssp": 0
+    },
+    {
+      "id": 33,
+      "firstname": "Daniel",
+      "lastname": "GONCALVES",
+      "photo": "/assets/photos/33_Daniel_Goncalves.jpeg",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 0,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 9,
+      "best_dev": 0,
+      "ca_ht_team_ssp": 0
+    },
+    {
+      "id": 34,
+      "firstname": "Anna",
+      "lastname": "MORRA",
+      "photo": "/assets/photos/34_Anna_Morra.jpg",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 0,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 7,
+      "best_dev": 0,
+      "ca_ht_team_ssp": 0
+    },   
+    {
+      "id": 35,
+      "firstname": "Hans",
+      "lastname": "KOLB",
+      "photo": "/assets/photos/35_Hans_Kolb.jpg",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 0,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 7,
+      "best_dev": 0,
+      "ca_ht_team_ssp": 0
+    },   
+    {
+      "id": 36,
+      "firstname": "Isabelle",
+      "lastname": "VALLEE",
+      "photo": "/assets/photos/36_Isabelle_Vallee.jpg",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 0,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 7,
+      "best_dev": 0,
+      "ca_ht_team_ssp": 0
+    }, 
+    {
+      "id": 37,
+      "firstname": "Aurore",
+      "lastname": "",
+      "photo": "",
+      "job": "mandataire",
+      "company": "Weelodge",
+      "office": "Weelodge Center",
+      "ca_ht_act": 0,
+      "ca_ht_ssp": 0,
+      "sales_ssp": 0,
+      "mandates": 0,
+      "best_dev": 1,
+      "ca_ht_team_ssp": 0
+    } 
   ]
 }
 
