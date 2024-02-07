@@ -1,4 +1,4 @@
-<div class="card" [ngStyle]="getCardColor()">
+<div *ngIf="userChild" class="card" [ngStyle]="getCardColor()">
 
     <div class="card-picture">
         <img class="card-rank" [src]="getCardLogoRanking()" alt="">
@@ -7,10 +7,32 @@
 
     <div class="card-body">
         <h3>{{userChild.firstname}} {{userChild.lastname}}</h3>
-        <p><span>{{userChild.company}} </span> <span class="salesteam">{{userChild.office}}</span></p>
+        <p ><span>{{userChild.office.brand}} </span> <span class="salesteam">{{userChild.office.city}}</span></p>
     </div>
 
- <!-- <p class="perf" *ngIf="getItemsEurosOrPoints()">{{userChild.salesPerformance}} {{getItemsEurosOrPoints()}}</p> -->
     <p class="perf" *ngIf="getItemsEurosOrPoints()">{{getPerformance()}} {{getItemsEurosOrPoints()}}</p>
+</div>
 
+<div *ngIf="officeChild" class="card" [ngStyle]="getCardColor()">
+
+    <div class="card-picture">
+        <img class="card-rank" [src]="getCardLogoRanking()" alt="">
+        <img class="card-img" 
+        *ngIf="officeChild.brand === 'WEELODGE'" [src]="'/assets/logos/weelodge_logo.png'" [alt]="officeChild.brand">
+        
+        <img class="card-img" 
+        *ngIf="officeChild.brand === 'AGENTYS'" [src]="'/assets/logos/agentys_logo.png'" [alt]="officeChild.brand">
+       </div>
+
+    <div class="card-body">
+        <h3>{{officeChild.nameOffice}}</h3>
+        
+        <p class="userList">
+            <span *ngFor="let user of officeChild.userList; let last = last">
+                {{ user.firstname }} {{ user.lastname }}{{ !last ? ', ' : '' }}
+            </span>
+        </p>
+       </div>
+
+    <p class="perf" *ngIf="getItemsEurosOrPoints()">{{getPerformance()}} {{getItemsEurosOrPoints()}}</p>
 </div>

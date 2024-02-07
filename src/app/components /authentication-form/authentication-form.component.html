@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<div class="py-6 md:p-4 lg:px-8 lg:py-4">
+
+    <!-- Texte pour la connexion -->
+    <div *ngIf="actionType === 'authenticate'" class="text-700 text-center px-2">
+        <div class="text-900 font-bold text-2xl mb-3 md:text-3xl lg:text-4xl">ESPACE ADMINISTRATEUR</div>
+    </div>
+</div>
+
+<div class="p-4 w-full m-auto md:w-10 lg:w-6">
+    <form class="md:mx-4" #registerForm="ngForm" (ngSubmit)="onFormSubmit(registerForm)">
+        <!-- Champs pour l'authentification -->
+        <div *ngIf="actionType === 'authenticate'">
+            <label class="block text-900 font-medium mb-1" for="user-email" >Email</label>
+            <input class="w-full mb-2" pInputText id="user-email" name="user-email" type="email" placeholder="exemple@email.com" [(ngModel)]="userAuth.email" required/>
+
+            <label class="block text-900 font-medium mb-1" for="user-password" >Mot de passe</label>
+            <input class="w-full mb-2" pInputText name="user-password" id="user-password" type="password" placeholder="********" autocomplete="on" [(ngModel)]="userAuth.password" required/>
+        
+
+            <p-button [disabled]="!isFormValid()" (click)="onSubmitAuth()" type="submit" icon="pi pi-check" [label]="'Me connecter'" class="form-submit-button w-full mt-4 p-button-success"></p-button>
+        </div>
+
+        <p-toast></p-toast>
+    </form>
+</div>

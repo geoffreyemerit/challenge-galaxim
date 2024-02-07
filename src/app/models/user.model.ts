@@ -1,21 +1,25 @@
+import { Office } from "./office.model";
+
 export class User {
 
     constructor (        
-        public id: number,
+        
         public firstname: string,
         public lastname: string,
         public photo: string,
-
-        public company: string,
-        public office: string,
-
-        public ca_ht_act: number,
-        public ca_ht_ssp: number,
-        public sales_ssp: number,
+        public job: string,
+        public caHtAct: number,
+        public caHtSsp: number,
+        public salesSsp: number,
         public mandates: number,
-        public best_dev: number,
-        public ca_ht_team_ssp: number,
-        public ca_company: number,
+        public bestDev: number,
+        public caHtNetworkTeamSsp: number,
+        public office: Office,
+        
+        public id?: number,
+        public email?: string,
+        public role?: string,
         ) {}
 }
+
 

@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { MessageService } from 'primeng/api';
+import { Office } from 'src/app/models/office.model';
+import { DbOfficeService } from 'src/app/shared/db-office.service';
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -15,21 +17,25 @@ export class RegisterFormComponent implements OnInit{
 
   firstname: string = "";
   lastname: string = "";
-  //selectedIntegrationDate!: Date;
 
-  companyOptions: string[] = ['Weelodge', 'Agentys'];
+  companyOptions: string[] = [];
   selectedCompany: string = '';
 
-  salesteamOptions: string[] = ["Andrésy","Conflans Ste Honorine", "Eragny", "Jouy Le Moutier", "Poissy", "Achères", "Triel sur Seine", "Weelodge Center", "Osny", "La Varenne", "Le Perreux sur Marne", "Le Plessis Trevise", "St Maur des Fosses - Adamville", "St Maur des Fosses - Mairie", "St Maur des Fosses - Vieux St Maur", "Tours", "Villiers sur Marne", "Champigny sur Marne", "Nogent sur Marne", "Paris 12"];
+  salesteamOptions: string[] = [];
   selectedSalesteam: string = '';
   
   packOptions: string[] = ['Pack Gala SOLO', 'Pack Gala DUO (Accompagnant hors réseau)','Pack Gala + Séminaire chambre SOLO', 'Pack Gala + Séminaire chambre DUO','Pack Gala DUO + Séminaire chambre SOLO','Pack Gala DUO + Séminaire chambre DUO'];
   selectedPack: string = '';
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private dbOfficeService: DbOfficeService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.dbOfficeService.getAllOffices().subscribe((offices: Office[]) => {
+      const uniqueBrands = Array.from(new Set(offices.map(office => office.brand)));
+      this.companyOptions = uniqueBrands;      
+      this.salesteamOptions = offices.map(office => office.city);
+    });
   }
 
   isFormValid(): boolean {
@@ -40,7 +46,6 @@ export class RegisterFormComponent implements OnInit{
     // Retourne true si toutes les conditions sont remplies, sinon false
     return isFirstNameValid && 
            isLastNameValid && 
-           //this.selectedIntegrationDate !== null && 
            this.selectedCompany !== '' && 
            this.selectedSalesteam !== '' && 
            this.selectedPack !== '';
@@ -52,7 +57,6 @@ export class RegisterFormComponent implements OnInit{
   const emailParams = {
     firstname: this.firstname,
     lastname: this.lastname,
-    //integrationDate: this.selectedIntegrationDate?.toLocaleDateString(), 
     company : form.value.company,
     salesteam : form.value.salesteam,
     pack : form.value.pack,
@@ -64,7 +68,6 @@ export class RegisterFormComponent implements OnInit{
       // Réinitialisez les valeurs des champs à leurs valeurs par défaut
       this.firstname = '';
       this.lastname = '';
-      //this.selectedIntegrationDate = new Date();
       this.selectedCompany = '';
       this.selectedSalesteam = '';
       this.selectedPack = '';

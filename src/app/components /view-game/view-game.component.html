@@ -1,9 +1,9 @@
 <app-navbar></app-navbar>
-<p-button class="previousPage-desktop" (click)="returnPreviousPage()" type="button" icon="pi pi-arrow-left" label="Retour" [style]="{ background: 'linear-gradient(90deg, rgba(226,0,126,1) 0%, rgba(107,35,131,1) 100%)'}"></p-button>
+<p-button class="previousPage-desktop" (click)="returnPreviousPage()" type="button" icon="pi pi-arrow-left" label="Retour" [style]="{ background: 'linear-gradient(90deg, rgba(226,0,126,1) 0%, rgba(107,35,131,1) 100%)', width: '120px'}"></p-button>
 
 <div *ngIf="myGame" class="px-2 sm:px-4 md:px-6 lg:px-8 game">
 
-    <h2 class="px-2 text-900 font-bold text-4xl mb-4 text-center sm:text-5xl">{{ myGame.name }}</h2>
+    <h2 class="px-2 text-900 font-bold text-4xl mb-4 text-center sm:text-5xl">{{ myGame.nameGame }}</h2>
     <p class="text-700 w-11 text-sm m-auto mb-3 text-center line-height-3 sm:text-md sm:w-10 md:text-xl md:w-8">{{ myGame.description }}</p>
     <p-button class="previousPage-mobile" (click)="returnPreviousPage()" type="button" icon="pi pi-arrow-left" label="" [style]="{ background: 'linear-gradient(90deg, rgba(226,0,126,1) 0%, rgba(107,35,131,1) 100%)'}"></p-button>
 

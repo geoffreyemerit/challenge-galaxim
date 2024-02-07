@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+
+<div class="surface-section px-4 py-8 md:px-6 lg:px-8 text-center">
+    <div class="mb-3 font-bold text-3xl">
+        
+        <span class="text-900">Espace d'administration</span>
+    </div>
+    <div class="text-700 mb-6">Bienvenue dans l'espace dédié à l'administration. <br> Explorez les fonctionnalités ci-dessous pour gérer vos agents, agences et jeux concours.</div>
+    <div class="grid">
+        <div class="col-12 md:col-4 mb-4 px-5">
+            <a [routerLink]="['/admin/agents']">
+                <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                <i class="pi pi-users text-4xl text-purple-500"></i>
+                </span>
+            </a>
+            <div class="text-900 text-xl mb-3 font-medium">Agents</div>
+            <span class="text-700 line-height-3">
+                Rafraîchir les résultats, intégrer un nouvel agent et ajuster les données.
+            </span>
+            
+        </div>
+        <div class="col-12 md:col-4 mb-4 px-5">
+            <a [routerLink]="['/admin/agences']">
+                <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                    <i class="pi pi-home text-4xl text-purple-500"></i>
+                </span>
+            </a>
+            <div class="text-900 text-xl mb-3 font-medium">Agences</div>
+            <span class="text-700 line-height-3 mb-4">Actualiser les résultats des agences, incorporer les membres et ajouter une nouvelle agence.</span>
+        </div>
+        <div class="col-12 md:col-4 mb-4 px-5">
+            <a [routerLink]="['/admin/mandataires']">
+                <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                    <i class="pi pi-user text-4xl text-purple-500"></i>
+                </span>
+            </a>
+            <div class="text-900 text-xl mb-3 font-medium">Mandataires</div>
+            <span class="text-700 line-height-3">Rafraîchir les résultats, intégrer un nouveau mandataire et ajuster les données.
+            </span>
+        </div>
+
+
+
+    </div>
+</div>

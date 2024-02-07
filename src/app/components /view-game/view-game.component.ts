@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Game } from 'src/app/models/game.model';
-import { GameDataService } from 'src/app/shared/game-data.service';
+import { DbGameService } from 'src/app/shared/db-game.service';
 
 @Component({
   selector: 'app-view-game',
@@ -16,7 +16,7 @@ export class ViewGameComponent implements OnInit {
   
   constructor(
     private route: ActivatedRoute,
-    private gameDataService: GameDataService,
+    private dbGameService: DbGameService,
     private router: Router
   ) {}
   
@@ -30,16 +30,13 @@ export class ViewGameComponent implements OnInit {
         this.gameId = parseInt(params.get("id") as string);
 
         // Appel au service pour récupérer les données du jeu correspondant à l'identifiant 'gameId' et abonnement aux données
-        this.gameDataService.getGameById(this.gameId).subscribe(data => {
+        this.dbGameService.getGameById(this.gameId).subscribe((game: Game) => {
           // Remplir la variable locale 'myGame' avec les données du jeu récupérées
-          this.myGame = data;
-          // Afficher les données du jeu dans la console à des fins de suivi et de débogage
+          this.myGame = game;
         });
       }
     });
   }
-  
-
 
     // Méthode appelée lors du clic sur le bouton "Retour"
     returnPreviousPage(): void {

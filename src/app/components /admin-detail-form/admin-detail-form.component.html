@@ -1,0 +1,76 @@
+    <div class=" w-full">
+    <form [formGroup]="galaximForm" (ngSubmit)="onSubmit()">
+
+        <div *ngIf="selectedLink != 'agences'">
+
+          <label for="firstname" class="block text-900 font-medium mb-1">PRÉNOM</label>
+          <input class=" w-full mb-2" pInputText id="firstname" name="firstname" type="text" placeholder="Prénom" formControlName="firstname" required/>
+ 
+          <label for="lastname" class="block text-900 font-medium mb-1">NOM</label>
+          <input class="w-full mb-2" pInputText id="lastname" name="lastname" type="text" placeholder="Nom" formControlName="lastname" required/>
+
+          <label for="office" class="block text-900 font-medium mb-1">AGENCE</label>
+          <select class="w-full mb-2" pInputText id="office" name="office" formControlName="office" required>
+            <option [ngValue]="null" selected disabled hidden>
+              {{ dataUserSelected ? dataUserSelected.office.nameOffice : 'Sélectionnez une agence' }}
+            </option>
+            <option *ngFor="let office of officeList" [ngValue]="office">{{ office.nameOffice }}</option>
+          </select>
+
+          <label for="caHtAct" class="block text-900 font-medium mb-1">CA HT ACTÉ</label>
+          <input class="w-full mb-2" pInputText id="caHtAct" name="caHtAct" type="number" placeholder="CA HT ACTÉ" formControlName="caHtAct" />
+
+          <label for="caHtSsp" class="block text-900 font-medium mb-1">CA HT SSP</label>
+          <input class="w-full mb-2" pInputText id="caHtSsp" name="caHtSsp" type="number" placeholder="CA HT SSP" formControlName="caHtSsp"/>
+
+          <label *ngIf="selectedLink === 'agents'" for="salesSsp" class="block text-900 font-medium mb-1">VENTES SSP (unités)</label>
+          <input *ngIf="selectedLink === 'agents'" class="w-full mb-2" pInputText id="salesSsp" name="salesSsp" type="number" placeholder="VENTES SSP (unités)" formControlName="salesSsp"/>
+
+          <label for="mandates" class="block text-900 font-medium mb-1">DÉMARCHEUR (unités)</label>
+          <input class="w-full mb-2" pInputText id="mandates" name="mandates" type="number" placeholder="DÉMARCHEUR (unités)" formControlName="mandates"/>
+
+          <div *ngIf="selectedLink === 'mandataires'">
+            <label for="bestDev" class="block text-900 font-medium mb-1">MEILLEUR DÉVELOPPEUR (unités)</label>
+            <input class="w-full mb-2" pInputText id="bestDev" name="bestDev" type="number" placeholder="MEILLEUR DÉVELOPPEUR (unités)" formControlName="bestDev"/>
+
+            <label for="caHtNetworkTeamSsp" class="block text-900 font-medium mb-1">CA HT GLOBAL EQUIPE SSP</label>
+            <input class="w-full mb-2" pInputText id="caHtNetworkTeamSsp" name="caHtNetworkTeamSsp" type="number" placeholder="CA HT GLOBAL EQUIPE SSP" formControlName="caHtNetworkTeamSsp"/>
+          </div>
+        </div>
+
+        <div *ngIf="selectedLink === 'agences'">
+          <label for="nameOffice" class="block text-900 font-medium mb-1">NOM DE L'AGENCE</label>
+          <input class="w-full mb-2" pInputText id="nameOffice" name="nameOffice" type="text" placeholder="Nom de l'agence" formControlName="nameOffice" required/>
+          
+           <label for="city" class="block text-900 font-medium mb-1">VILLE</label>
+          <input class="w-full mb-2" pInputText id="city" name="city" type="text" placeholder="Ville" formControlName="city" required/>
+          
+          <label for="brand" class="block text-900 font-medium mb-1">RÉSEAU</label>
+          <select class="w-full mb-2" pInputText id="brand" name="brand" formControlName="brand" required>
+            <option [ngValue]="null" selected disabled hidden>{{ dataOfficeSelected ? dataOfficeSelected.brand : 'Sélectionnez un réseau' }}</option>
+            <option [value]="'AGENTYS'">Agentys</option>
+            <option [value]="'WEELODGE'">Weelodge</option>
+          </select>
+          
+          <label for="caHtOfficeSsp" class="block text-900 font-medium mb-1">CA HT ACTÉ</label>
+          <input class="w-full mb-2" pInputText id="caHtOfficeSsp" name="caHtOfficeSsp" type="number" placeholder="CA HT AGENCE SSP" formControlName="caHtOfficeSsp"/>
+          
+          <label for="selectedUsers" class="block text-900 font-medium mb-1">Sélectionner les agents de l'équipe </label>
+          <select *ngIf="allUsers && allUsers.length > 0" class="w-full mb-2" pInputText id="selectedUsers" name="selectedUsers" formControlName="userList">
+            <option *ngFor="let user of allUsers" [ngValue]="user">{{ user.firstname }} {{ user.lastname }}</option>
+          </select>
+
+          <p-button type="button" label="Ajouter" (click)="addTeamMember()" class="form-submit-button w-full mt-4 p-button-success" [style]="{ background: 'black', width: '6rem' }"></p-button>
+
+          <div>
+            <p class="text-400 text-lg md:text-xl mt-4 mb-2">Agents de l'équipe:</p>
+            <span class="mr-5 inline-block" *ngFor="let teamMember of selectedTeamMembers">
+              {{ teamMember.firstname }} {{ teamMember.lastname }}
+              <p-button type="button" (click)="removeTeamMember(teamMember)" [style]="{ background: 'black', color: 'white', width: '25px', height: '25px'}" icon="pi pi-times"></p-button>
+            </span>
+          </div>
+        </div>
+
+        <p-button [disabled]="!galaximForm.valid" type="submit" label="{{addedLink ? 'Ajouter' : 'Mettre à jour'}}" class="form-submit-button w-full mt-4 p-button-success" [style]="{ background: 'linear-gradient(90deg, rgba(226,0,126,1) 0%, rgba(107,35,131,1) 100%)' }" ></p-button>
+    </form>
+</div>

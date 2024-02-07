@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +16,11 @@ import { RankingListComponent } from './components /ranking-list/ranking-list.co
 import { RankingCardComponent } from './components /ranking-card/ranking-card.component';
 import { RegisterFormComponent } from './components /register-form/register-form.component';
 import { ErrorComponent } from './components /error/error.component';
-
-import { GameDataService } from './shared/game-data.service';
+import { AdminHomeComponent } from './components /admin-home/admin-home.component';
+import { AdminDetailComponent } from './components /admin-detail/admin-detail.component';
+import { AdminDetailListComponent } from './components /admin-detail-list/admin-detail-list.component';
+import { AdminDetailCardComponent } from './components /admin-detail-card/admin-detail-card.component';
+import { AdminDetailFormComponent } from './components /admin-detail-form/admin-detail-form.component';
 
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
@@ -27,7 +30,15 @@ import { ToastModule } from 'primeng/toast';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { RulesChallengeComponent } from './components /rules-challenge/rules-challenge.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-
+import { TokenInterceptorInterceptor } from './core/token-interceptor.interceptor';
+import { AuthenticationFormComponent } from './components /authentication-form/authentication-form.component';
+import { MessageService } from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
+import { AvatarModule } from 'primeng/avatar';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
 
 @NgModule({
   declarations: [
@@ -42,13 +53,19 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     RegisterFormComponent,
     HomeDescriptionComponent,
     RulesChallengeComponent,
-    
+    AuthenticationFormComponent,
+    AdminHomeComponent,
+    AdminDetailComponent,
+    AdminDetailListComponent,
+    AdminDetailCardComponent,
+    AdminDetailFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgxExtendedPdfViewerModule,
 
@@ -58,8 +75,22 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     CalendarModule,
     ToastModule,
     ScrollTopModule,
+    DialogModule,
+    AvatarModule,
+    ConfirmDialogModule,
+    InputNumberModule,
+    ConfirmPopupModule
+
   ],
-  providers: [GameDataService],
+  providers: [
+    MessageService,
+    ConfirmationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

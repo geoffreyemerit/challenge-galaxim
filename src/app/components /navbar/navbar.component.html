@@ -2,7 +2,7 @@
     <img class="navbar-logo-desktop" [routerLink]="['']" src="../assets/logos/galaxim-resize.png" alt="logo galaxim">
     <img class="navbar-logo-mobile" [routerLink]="['']" src="../assets/logos/galaxim_carre.png" alt="logo galaxim">
 
-        <p-sidebar [(visible)]="sidebarVisible" position="top" class="navbar-sidebar" [style]="{height: '35rem'}" >
+        <p-sidebar [(visible)]="sidebarVisible" position="top" class="navbar-sidebar" [style]="{height: '41rem'}" >
           <nav>
                 <ul>
                     <li >
@@ -11,6 +11,10 @@
                         <a (click)="closeSidebar()" [routerLink]="['/team', 'agences']">TEAM AGENCES</a>
                         <a (click)="closeSidebar()" [routerLink]="['/team', 'mandataires']">TEAM MANDATAIRES</a>
                         <a (click)="closeSidebar()" [routerLink]="['/inscription']">INSCRIPTION</a>
+                        <a *ngIf="!isAuthenticated" (click)="closeSidebar()" [routerLink]="['/connexion']">ME CONNECTER</a>
+                        <a *ngIf="isAuthenticated" (click)="closeSidebar()" [routerLink]="['/admin']">ESPACE ADMIN</a>
+                        <a *ngIf="isAuthenticated" (click)="signOut()" [routerLink]="['']">DÉCONNEXION</a>
+
                     </li>
                 </ul>
             </nav>
