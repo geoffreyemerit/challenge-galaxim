@@ -1,0 +1,4 @@
+{
+  "schemaVesrion": 2,
+  "dockerfilePath" :"./Dockerfile"
+}
