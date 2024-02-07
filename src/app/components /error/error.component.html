@@ -1,0 +1,14 @@
+<div class="grid grid-nogutter surface-section text-800 h-screen">
+    <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">Erreur 404</span>
+            <div class="text-4xl text-primary font-bold mb-3 md:text-6xl">Cette page n'existe pas</div>
+            <p class="mt-0 mb-4 text-700 line-height-3" >La page que vous tentez d'afficher n'existe pas ou une autre erreur s'est produite.</p>
+            
+            <button pButton pRipple label="◀︎ Accueil" type="button" class=" p-button-outlined" [routerLink]="['']"></button>
+        </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <img src="assets/images/error.jpg" alt="Image" [style]="{'object-fit': 'cover'}" class="w-full md:ml-auto block md:h-screen" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+    </div>
+</div>

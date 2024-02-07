@@ -1,0 +1,37 @@
+
+.form{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+
+    .form-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1rem;
+    }
+}
+
+::ng-deep .form-input{
+    cursor: pointer;
+    width: 100px;
+}
+
+::ng-deep .p-calendar{
+    width: 100%;
+}
+
+::ng-deep .p-button{
+    margin-top: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+

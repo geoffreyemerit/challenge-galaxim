@@ -1,0 +1,23 @@
+<div class="cardContainer">
+
+    <!-- Afficher la liste des utilisateurs -->
+    <ng-container *ngIf="userList && userList.length > 0">
+      <app-ranking-card
+        *ngFor="let user of userList; let i = index"
+        [userChild]="user"
+        [position]="i + 1"
+        [idGame]="game.id!"
+      ></app-ranking-card>
+    </ng-container>
+  
+    <!-- Afficher la liste des bureaux -->
+    <ng-container *ngIf="officeList && officeList.length > 0">
+      <app-ranking-card
+        *ngFor="let office of officeList; let i = index"
+        [officeChild]="office"
+        [position]="i + 1"
+        [idGame]="game.id!"
+      ></app-ranking-card>
+    </ng-container>
+  
+  </div>
