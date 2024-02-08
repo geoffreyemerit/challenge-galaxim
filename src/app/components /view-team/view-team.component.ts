@@ -25,9 +25,14 @@ ngOnInit(): void {
       this.teamId = params.get("job") as string;
 
       // Utilisez la méthode getGameByJob pour récupérer les jeux par job
-      this.dbGameService.getGameByJob(this.teamId).subscribe((games: Game[]) => {
-        this.gameList = games;
-      });
+      this.dbGameService.getGameByJob(this.teamId).subscribe(
+        (games: Game[]) => {
+          this.gameList = games;
+        },
+        (error) => {
+          console.error("Erreur lors de la récupération des jeux :", error);
+        }
+      );
     }
   });
 }
