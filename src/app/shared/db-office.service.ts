@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Office } from '../models/office.model';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbOfficeService {
 
-  //private _BASE_URL = 'http://localhost:8080/api/v1/offices'; // Update with your backend API URL
   private readonly _BASE_URL = environment._API_OFFICE_URL; 
 
   constructor(private http: HttpClient) { }

@@ -1,4 +1,5 @@
 export const environment = {
+    production: false, 
     _API_URL: "http://localhost:8080",
     _API_AUTH_URL: "http://localhost:8080/api/v1/auth",
     _API_GAME_URL: "http://localhost:8080/api/v1/games",

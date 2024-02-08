@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
-import { DbOfficeService } from './db-office.service';
-import { Office } from '../models/office.model';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +10,8 @@ import { environment } from 'src/environments/environment.prod';
 export class DbUserService {
 
   private readonly _BASE_URL = environment._API_USER_URL; 
-  //private _BASE_URL = 'http://localhost:8080/api/v1/users'; // Update with your backend API URL
 
-
-  constructor(private http: HttpClient, private dbOfficeService: DbOfficeService) { }
+  constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this._BASE_URL}/all`);

@@ -1,4 +1,5 @@
 export const environment = {
+    production: true,
     _API_URL: "https://backend-challenge.galaxim.com",
     _API_AUTH_URL: "https://backend-challenge.galaxim.com/api/v1/auth",
     _API_GAME_URL: "https://backend-challenge.galaxim.com/api/v1/games",

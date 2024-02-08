@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Office } from 'src/app/models/office.model';
 import { User } from 'src/app/models/user.model';
-//import { DbOfficeService } from 'src/app/shared/db-office.service';
-//import { DbUserService } from 'src/app/shared/db-user.service';
 
 @Component({
   selector: 'app-ranking-card',

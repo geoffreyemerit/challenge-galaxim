@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NgxExtendedPdfViewerService, pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
+import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class RulesChallengeComponent {
 
   public pageLabel!: string;
 
-  constructor(private pdfService: NgxExtendedPdfViewerService) {
+  constructor() {
 
     pdfDefaultOptions.doubleTapZoomFactor = '70%'; // The default value is '200%'
     pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5; // The default value is 4096 * 4096 pixels,
