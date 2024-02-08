@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Game } from '../models/game.model';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbGameService {
 
-  private readonly _BASE_URL = 'http://localhost:8080/api/v1/games'; 
+  //private readonly _BASE_URL = 'http://localhost:8080/api/v1/games'; 
+  private readonly _BASE_URL = environment._API_GAME_URL; 
 
   constructor(private http: HttpClient) { }
 

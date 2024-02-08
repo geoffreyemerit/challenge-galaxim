@@ -7,13 +7,16 @@ import { TokenResponse } from '../models/token.model';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage.service';
 import { UserRegister } from '../models/user-register.model';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private readonly _BASE_URL = "http://localhost:8080/api/v1/auth";
+  //private readonly _BASE_URL = "http://localhost:8080/api/v1/auth";
+  private readonly _BASE_URL = environment._API_AUTH_URL; 
+
   private _httpErrorSubject$: BehaviorSubject<HttpErrorResponse> = new BehaviorSubject(new HttpErrorResponse({}));
   private _httpSuccessSubject$: BehaviorSubject<HttpResponse<any>> = new BehaviorSubject(new HttpResponse({}));
 
