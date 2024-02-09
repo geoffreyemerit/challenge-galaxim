@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Game } from '../models/game.model';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,8 @@ export class DbGameService {
   }
 
   getGameByJob(job: string): Observable<Game[]> {
+    const url = `${this._BASE_URL}/team/${job}`;
+    console.log("URL de la requête :", url);
     return this.http.get<Game[]>(`${this._BASE_URL}/team/${job}`);
   }
 
