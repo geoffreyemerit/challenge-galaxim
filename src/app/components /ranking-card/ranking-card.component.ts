@@ -75,6 +75,7 @@ export class RankingCardComponent implements OnInit {
       return items;
     }
 
+  //toLocaleString pour formaliser le ca
     getPerformance(): string {
       switch (this.idGame) {
           case 1:
