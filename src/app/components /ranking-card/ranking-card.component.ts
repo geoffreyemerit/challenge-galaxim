@@ -75,30 +75,30 @@ export class RankingCardComponent implements OnInit {
       return items;
     }
 
-    getPerformance(): number {
+    getPerformance(): string {
       switch (this.idGame) {
           case 1:
-              return this.userChild!.caHtAct;
+              return this.userChild!.caHtAct.toLocaleString();
           case 2:
-              return this.userChild!.caHtSsp;
+              return this.userChild!.caHtSsp.toLocaleString();
           case 3:
-              return this.userChild!.salesSsp;
+              return this.userChild!.salesSsp.toLocaleString();
           case 4:
-              return this.userChild!.mandates; 
+              return this.userChild!.mandates.toLocaleString(); 
           case 6:
-              return this.userChild!.caHtAct;
+              return this.userChild!.caHtAct.toLocaleString();
           case 5:
-              return this.officeChild!.caHtOfficeSsp; 
+              return this.officeChild!.caHtOfficeSsp.toLocaleString(); 
           case 7:
-              return this.userChild!.caHtSsp;
+              return this.userChild!.caHtSsp.toLocaleString();
           case 8:
-              return this.userChild!.mandates; 
+              return this.userChild!.mandates.toLocaleString(); 
           case 9:
-              return this.userChild!.caHtNetworkTeamSsp;
+              return this.userChild!.caHtNetworkTeamSsp.toLocaleString();
           case 10:
-              return this.userChild!.bestDev; 
+              return this.userChild!.bestDev.toLocaleString(); 
           default:
-              return 0;
+              return '0';
       }
   }
 }
