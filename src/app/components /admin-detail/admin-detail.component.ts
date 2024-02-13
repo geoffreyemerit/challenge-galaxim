@@ -15,7 +15,7 @@ export class AdminDetailComponent implements OnInit{
   selectedLink: string;
   addedLink: string = "add";
 
-  isOpen: boolean = false;
+  isOpen: boolean = false; //false
 
   dataList!: (User | Office)[];
 
@@ -57,9 +57,5 @@ export class AdminDetailComponent implements OnInit{
     } else {
       console.error("Invalid selected link: ", this.selectedLink);
     }
-
-
   }
-  
-  
 }
