@@ -18,10 +18,10 @@ export class RegisterFormComponent implements OnInit{
   firstname: string = "";
   lastname: string = "";
 
-  companyOptions: string[] = [];
+  companyOptions: string[] = ['Weelodge', 'Agentys'];
   selectedCompany: string = '';
 
-  salesteamOptions: string[] = [];
+  salesteamOptions: string[] = ["Andrésy","Conflans Ste Honorine", "Eragny", "Jouy Le Moutier", "Poissy", "Achères", "Triel sur Seine", "Weelodge Center", "Osny", "La Varenne", "Le Perreux sur Marne", "Le Plessis Trevise", "St Maur des Fosses - Adamville", "St Maur des Fosses - Mairie", "St Maur des Fosses - Vieux St Maur", "Tours", "Villiers sur Marne", "Champigny sur Marne", "Nogent sur Marne", "Paris 12"];
   selectedSalesteam: string = '';
   
   packOptions: string[] = ['Pack Gala SOLO', 'Pack Gala DUO (Accompagnant hors réseau)','Pack Gala + Séminaire chambre SOLO', 'Pack Gala + Séminaire chambre DUO','Pack Gala DUO + Séminaire chambre SOLO','Pack Gala DUO + Séminaire chambre DUO'];
