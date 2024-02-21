@@ -42,3 +42,6 @@ jobs:
         app: "${{ secrets.APP_NAME }}"
         token: "${{ secrets.APP_TOKEN }}"
         image: ${{ env.IMAGE_URL }}
+
+
+        
