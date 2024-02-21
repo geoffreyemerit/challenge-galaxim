@@ -17,7 +17,7 @@ export class RegisterFormComponent implements OnInit{
 
   firstname: string = "";
   lastname: string = "";
-
+  //ajout ancienne données
   companyOptions: string[] = ['Weelodge', 'Agentys'];
   selectedCompany: string = '';
 
