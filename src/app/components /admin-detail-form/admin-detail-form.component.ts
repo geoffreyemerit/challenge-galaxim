@@ -159,7 +159,8 @@ export class AdminDetailFormComponent implements OnInit {
         mandates: formData.mandates,
         bestDev: formData.bestDev,
         caHtNetworkTeamSsp: formData.caHtNetworkTeamSsp,
-        office: formData.office
+        office: formData.office,
+        caAllActions: this.dataUserSelected.caAllActions ? this.dataUserSelected.caAllActions : undfined,
       };
 
       // Office data
