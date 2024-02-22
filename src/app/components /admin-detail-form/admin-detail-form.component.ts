@@ -112,6 +112,7 @@ export class AdminDetailFormComponent implements OnInit {
         bestDev: [this.dataUserSelected.bestDev],
         caHtNetworkTeamSsp: [this.dataUserSelected.caHtNetworkTeamSsp],
         office: [this.dataUserSelected.office, Validators.required],
+        caAllActions: [this.dataUserSelected.caAllActions]
       });
     }
   }
