@@ -15,7 +15,8 @@ export class User {
         public bestDev: number,
         public caHtNetworkTeamSsp: number,
         public office: Office,
-        
+
+        public caAllActions?: number,
         public id?: number,
         public email?: string,
         public role?: string,
