@@ -86,8 +86,7 @@ export class AdminDetailFormComponent implements OnInit {
         mandates: [''],
         bestDev: [''],
         caHtNetworkTeamSsp: [''],
-        office: ['', Validators.required],
-        caAllActions: ['']
+        office: ['', Validators.required]
       });
     }
   }      
@@ -112,8 +111,7 @@ export class AdminDetailFormComponent implements OnInit {
         mandates: [this.dataUserSelected.mandates],
         bestDev: [this.dataUserSelected.bestDev],
         caHtNetworkTeamSsp: [this.dataUserSelected.caHtNetworkTeamSsp],
-        office: [this.dataUserSelected.office, Validators.required],
-        caAllActions: [this.dataUserSelected.caAllActions]
+        office: [this.dataUserSelected.office, Validators.required]
       });
     }
   }
@@ -161,7 +159,6 @@ export class AdminDetailFormComponent implements OnInit {
         bestDev: formData.bestDev,
         caHtNetworkTeamSsp: formData.caHtNetworkTeamSsp,
         office: formData.office,
-        caAllActions: this.dataUserSelected.caAllActions ? this.dataUserSelected.caAllActions : undefined,
       };
 
       // Office data
