@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<ngx-extended-pdf-viewer
+     [src]="'/assets/pdfs/BEALEGEND.pdf'"
+     [textLayer]="true" 
+     [showHandToolButton]="true" 
+     [showPresentationModeButton]="true"
+     [(page)]="page"
+     [(pageLabel)]="pageLabel"
+     [theme]="'dark'"
+     [backgroundColor]="'#121212'">
+    >
+</ngx-extended-pdf-viewer>
