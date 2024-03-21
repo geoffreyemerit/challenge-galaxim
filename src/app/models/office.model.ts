@@ -1,7 +1,6 @@
 import { User } from "./user.model";
 
 export class Office {
-
     constructor (        
         
         public brand: string,

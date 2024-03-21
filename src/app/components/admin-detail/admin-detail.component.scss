@@ -2,10 +2,9 @@
     display: flex;
     justify-content: end;
     margin-right: 1rem;
-    
 }
 
-.header{
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,5 +13,13 @@
 
     h3{
         font-size: 2rem;
+    }
+
+    .filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
     }
 }   
