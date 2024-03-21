@@ -1,6 +1,6 @@
 <!-- <ng-container *ngIf="dataList && dataList.length > 0">
   <app-admin-detail-card
-  *ngFor="let data of dataList"
+  *ngFor="let data of dataListFiltered.length > 0 ? dataListFiltered : dataList""
   [data]="data"
   [selectedLink]="selectedLink"
   ></app-admin-detail-card>
@@ -8,16 +8,16 @@
 
 <div *ngIf="!dataList || dataList.length === 0">
   Aucune donnée à afficher.
-</div> -->
+</div>   -->
 
-<ng-container *ngIf="filteredList && filteredList.length > 0">
+<ng-container *ngIf="dataListFiltered && dataListFiltered.length > 0">
   <app-admin-detail-card
-  *ngFor="let data of filteredList"
+  *ngFor="let data of dataListFiltered"
   [data]="data"
   [selectedLink]="selectedLink"
   ></app-admin-detail-card>
 </ng-container>
 
-<div *ngIf="!filteredList || filteredList.length === 0">
+<div *ngIf="!dataListFiltered || dataListFiltered.length === 0">
   Aucune donnée à afficher.
 </div>

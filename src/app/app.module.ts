@@ -21,6 +21,7 @@ import { AdminDetailComponent } from './components/admin-detail/admin-detail.com
 import { AdminDetailListComponent } from './components/admin-detail-list/admin-detail-list.component';
 import { AdminDetailCardComponent } from './components/admin-detail-card/admin-detail-card.component';
 import { AdminDetailFormComponent } from './components/admin-detail-form/admin-detail-form.component';
+import { AdminDetailFilterComponent } from './components/admin-detail-filter/admin-detail-filter.component';
 
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
@@ -39,7 +40,6 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
-import { AdminDetailFilterComponent } from './admin-detail-filter/admin-detail-filter.component';
 
 @NgModule({
   declarations: [

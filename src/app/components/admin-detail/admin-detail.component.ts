@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Office } from 'src/app/models/office.model';
 import { User } from 'src/app/models/user.model';
@@ -11,13 +11,15 @@ import { DbUserService } from 'src/app/shared/db-user.service';
   styleUrls: ['./admin-detail.component.scss']
 })
 export class AdminDetailComponent implements OnInit{
-  
+
+  filterValue: string = ""; 
   selectedLink: string;
   addedLink: string = "add";
 
   isOpen: boolean = false; //false
 
   dataList!: (User | Office)[];
+  
 
   constructor(private route: ActivatedRoute, private dbUserService: DbUserService,
     private dbOfficeService: DbOfficeService){
@@ -58,4 +60,5 @@ export class AdminDetailComponent implements OnInit{
       console.error("Invalid selected link: ", this.selectedLink);
     }
   }
+  
 }

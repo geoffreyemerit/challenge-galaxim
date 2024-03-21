@@ -4,15 +4,19 @@
 
 <div class="header">
 <h3>{{ selectedLink.toUpperCase() }}</h3>
-<p-button (click)="openForm()" icon="pi pi-plus" label="Ajouter" [style]="{ background: '#2663EB', border: 'white'}"></p-button>
+<div class="filter">
+    <app-admin-detail-filter (emitInputSearch)="filterValue = $event"></app-admin-detail-filter>
 
-    <p-dialog *ngIf="addedLink" header="{{ selectedLink === 'agents' ? 'Nouvel agents' : selectedLink === 'agences' ? 'Nouvelle agence' : 'Nouveau mandataire' }}" [(visible)]="isOpen" [breakpoints]="{ '960px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-        <app-admin-detail-form   
-        [addedLink]="addedLink"
-        [selectedLink]="selectedLink"
-        [dataList]="dataList" 
-        ></app-admin-detail-form>
-    </p-dialog>
-
-<app-admin-detail-list [selectedLink]="selectedLink" [dataList]="dataList"></app-admin-detail-list>
+    <p-button (click)="openForm()" icon="pi pi-plus" label="Ajouter" [style]="{ background: '#2663EB', border: 'white'}"></p-button>
+        <p-dialog *ngIf="addedLink" header="{{ selectedLink === 'agents' ? 'Nouvel agents' : selectedLink === 'agences' ? 'Nouvelle agence' : 'Nouveau mandataire' }}" [(visible)]="isOpen" [breakpoints]="{ '960px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+            <app-admin-detail-form   
+            [addedLink]="addedLink"
+            [selectedLink]="selectedLink"
+            [dataList]="dataList" 
+            ></app-admin-detail-form>
+        </p-dialog>
 </div>
+
+<app-admin-detail-list [selectedLink]="selectedLink" [dataList]="dataList" [filterValue]="filterValue"></app-admin-detail-list>
+</div>
+

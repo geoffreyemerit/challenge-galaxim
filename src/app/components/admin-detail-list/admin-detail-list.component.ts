@@ -9,43 +9,44 @@ import { User } from 'src/app/models/user.model';
 })
 export class AdminDetailListComponent implements OnInit{
 
+  @Input()
+  filterValue: string = "";
+
   @Input() 
   selectedLink: string = "";
 
   @Input()
   dataList: (User | Office)[] = [];
 
-  filteredList: (User | Office)[] = [];
+
+  dataListFiltered: (User | Office)[] = [];
 
   constructor() {}
 
   ngOnInit() {
-    this.filteredList = this.dataList;
+    this.filterData();
   }
 
-  filterDataList(inputSearch: string): void {
-    if (!inputSearch) {
-      // If search input is empty, show all data
-      this.filteredList = this.dataList;
-      return;
+  ngOnChanges() {
+    this.filterData();
+  }
+
+  filterData() {
+    if (this.dataList && this.dataList.length > 0 && this.filterValue) {
+      this.dataListFiltered = this.dataList.filter(item => {
+        if (this.selectedLink === 'agents' || this.selectedLink === 'mandataires') {
+          const user = item as User;
+          return user.firstname.toLowerCase().includes(this.filterValue.toLowerCase()) || 
+                 user.lastname.toLowerCase().includes(this.filterValue.toLowerCase());
+        } else if (this.selectedLink === 'agences') {
+          const office = item as Office;
+          return office.nameOffice.toLowerCase().includes(this.filterValue.toLowerCase());
+        } else {
+          return false; // Si le lien sélectionné n'est pas valide, retourner false
+        }
+      });
+    } else {
+      this.dataListFiltered = this.dataList; // Si aucune recherche n'est effectuée, afficher toutes les données
     }
-
-    // Otherwise, filter dataList based on inputSearch
-    this.filteredList = this.dataList.filter((item: User | Office) => {
-      if (item instanceof User) {
-        // If item is a User, filter based on user properties like firstname, lastname, etc.
-        const user = item as User;
-        return (
-          user.firstname.toLowerCase().includes(inputSearch.toLowerCase()) || 
-          user.lastname.toLowerCase().includes(inputSearch.toLowerCase())
-        );
-      } else if (item instanceof Office) {
-        // If item is an Office, filter based on office name
-        const office = item as Office;
-        return office.nameOffice.toLowerCase().includes(inputSearch.toLowerCase());
-      }
-      return false; // Default to false if neither User nor Office
-    });
   }
-  
 }
