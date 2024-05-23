@@ -49,7 +49,7 @@ export class AuthService {
       .pipe(
         tap(res => {
           // Affichez la réponse dans la console pour le moment (vous pouvez gérer la réponse selon vos besoins)
-          console.log(res);
+          //console.log(res);
         }),
         delay(1000), // Retarde la suite de l'observable de 2 secondes
         tap(() => {

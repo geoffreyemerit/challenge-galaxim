@@ -23,7 +23,7 @@ export class DbGameService {
 
   getGameByJob(job: string): Observable<Game[]> {
     const url = `${this._BASE_URL}/team/${job}`;
-    console.log("URL de la requête :", url);
+    //console.log("URL de la requête :", url);
     return this.http.get<Game[]>(`${this._BASE_URL}/team/${job}`);
   }
 

@@ -17,7 +17,7 @@ export class AdminDetailFilterComponent implements OnInit {
   ngOnInit(): void {  }
 
   onSearch():void {
-    console.log("Input search value:", this.inputSearch); 
+    //console.log("Input search value:", this.inputSearch); 
     this.emitInputSearch.emit(this.inputSearch);
   }
 }
